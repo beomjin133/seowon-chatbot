@@ -1,0 +1,323 @@
+/* ========================================
+   하단 입력 영역
+======================================== */
+.chat-bottom {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-color-main, #ffffff);
+    flex-shrink: 0;
+    z-index: 10;
+    padding: 16px 0;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* ========================================
+   입력 래퍼
+======================================== */
+.inp-wrap {
+    max-width: 1024px;
+    width: 100%;
+    padding: 0 24px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   입력 박스
+======================================== */
+.inp-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg-color-sub, #f9fafb);
+    border-radius: 24px;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color, #e5e7eb);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+}
+
+.inp-box:focus-within {
+    border-color: var(--primary-color, #4a90e2);
+    box-shadow: 0 2px 12px rgba(74, 144, 226, 0.15);
+}
+
+/* ========================================
+   텍스트 입력 영역
+======================================== */
+.inp-text-wrap {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.inp-text {
+    width: 100%;
+    min-height: 24px;
+    max-height: 200px;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-color-main, #1f2937);
+    outline: none;
+    resize: none;
+    padding: 8px 0;
+    line-height: 1.6;
+    overflow-y: auto;
+    transition: opacity 0.2s ease;
+}
+
+.inp-text::placeholder {
+    color: var(--text-color-caption, #9ca3af);
+}
+
+.inp-text:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 스크롤바 숨김 */
+.inp-text::-webkit-scrollbar {
+    display: none;
+}
+
+.inp-text {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* ========================================
+   액션 버튼 영역
+======================================== */
+.inp-actions-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.inp-functions-wrap {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* 아이콘 버튼 (추후 구현) */
+.icon-btn {
+    display: none; /* 현재는 숨김 처리 */
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-color-caption, #9ca3af);
+}
+
+.icon-btn:hover:not(:disabled) {
+    background: var(--hover-bg, #f3f4f6);
+    color: var(--text-color-main, #1f2937);
+}
+
+.icon-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* 전송 버튼 */
+.send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.send-btn:not(:disabled):hover {
+    background: var(--hover-bg, #f3f4f6);
+    transform: scale(1.05);
+}
+
+.send-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.send-btn.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   경고 문구
+======================================== */
+.inp-warning {
+    position: relative;
+    padding: 12px 0 0 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.inp-warning p {
+    font-size: 12px;
+    color: var(--text-color-caption, #9ca3af);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ========================================
+   반응형 디자인
+======================================== */
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+    .inp-wrap {
+        padding: 0 20px;
+    }
+
+    .chat-bottom {
+        padding: 14px 0;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+    .chat-bottom {
+        padding: 12px 0;
+    }
+
+    .inp-wrap {
+        padding: 0 16px;
+    }
+
+    .inp-box {
+        border-radius: 20px;
+        padding: 10px 14px;
+    }
+
+    .inp-text {
+        font-size: 14px;
+    }
+
+    .inp-warning p {
+        font-size: 11px;
+    }
+}
+
+/* 작은 모바일 */
+@media (max-width: 480px) {
+    .chat-bottom {
+        padding: 10px 0;
+    }
+
+    .inp-wrap {
+        padding: 0 12px;
+    }
+
+    .inp-box {
+        border-radius: 18px;
+        padding: 8px 12px;
+    }
+
+    .inp-text {
+        font-size: 14px;
+        max-height: 150px;
+    }
+
+    .inp-actions-wrap {
+        gap: 8px;
+        margin-top: 6px;
+    }
+
+    .inp-warning {
+        padding: 8px 0 0 0;
+    }
+
+    .inp-warning p {
+        font-size: 10px;
+    }
+}
+
+/* ========================================
+   다크모드 지원
+======================================== */
+:global(.dark-mode) .chat-bottom {
+    background: var(--bg-color-main);
+    box-shadow: 0 -1px 3px rgba(255, 255, 255, 0.05);
+}
+
+:global(.dark-mode) .inp-box {
+    background: var(--bg-color-sub);
+    border-color: var(--border-color);
+}
+
+:global(.dark-mode) .inp-box:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 12px rgba(74, 144, 226, 0.25);
+}
+
+:global(.dark-mode) .inp-text {
+    color: var(--text-color-main);
+}
+
+:global(.dark-mode) .inp-text::placeholder {
+    color: var(--text-color-caption);
+}
+
+:global(.dark-mode) .icon-btn:hover:not(:disabled) {
+    background: var(--hover-bg);
+    color: var(--text-color-main);
+}
+
+:global(.dark-mode) .send-btn:not(:disabled):hover {
+    background: var(--hover-bg);
+}
+
+/* ========================================
+   접근성 개선
+======================================== */
+
+/* 포커스 스타일 */
+.inp-text:focus-visible,
+.icon-btn:focus-visible,
+.send-btn:focus-visible {
+    outline: 2px solid var(--focus-color, #4a90e2);
+    outline-offset: 2px;
+}
+
+/* 애니메이션 줄이기 선호 */
+@media (prefers-reduced-motion: reduce) {
+    .inp-box,
+    .inp-text,
+    .icon-btn,
+    .send-btn {
+        transition: none;
+    }
+
+    .send-btn.loading {
+        animation: none;
+    }
+
+    .send-btn:not(:disabled):hover {
+        transform: none;
+    }
+}

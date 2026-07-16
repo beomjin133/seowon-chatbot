@@ -1,0 +1,29 @@
+.step-wrap {
+  width: 100%;
+  padding: 10px;
+  border-top: var(--border-default);
+  border-bottom: var(--border-default);
+}
+
+.step-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-group {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color-step);
+}
+
+.step-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.active {
+  color: var(--text-color-primary);
+}

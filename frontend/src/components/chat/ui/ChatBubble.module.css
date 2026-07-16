@@ -1,0 +1,448 @@
+/* ========================================
+   봇 메시지 영역
+======================================== */
+.bot-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+    animation: slideInLeft 0.3s ease-out;
+}
+
+/* 봇 프로필 */
+.bot-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.ico-bot-profile {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.ico-bot-logo {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 봇 컨텐츠 */
+.bot-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    max-width: calc(100% - 48px);
+}
+
+.bot-name-wrap {
+    padding-left: 4px;
+}
+
+.bot-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-color-caption, #6b7280);
+    letter-spacing: -0.2px;
+}
+
+/* 봇 말풍선 */
+.bot-bubble {
+    padding: 12px 16px;
+    border-radius: 16px;
+    border-top-left-radius: 4px;
+    background: var(--chat-bubble-bg-bot, #f3f4f6);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    position: relative;
+    max-width: 100%;
+    word-wrap: break-word;
+    transition: all 0.2s ease;
+}
+
+.bot-bubble:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* 로딩 상태 말풍선 */
+.loading-bubble {
+    background: linear-gradient(90deg, #f3f4f6 0%, #e5e7eb 50%, #f3f4f6 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* 에러 상태 말풍선 */
+.error-bubble {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border: 1px solid #fca5a5;
+}
+
+.bot-chating {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* ========================================
+   사용자 메시지 영역
+======================================== */
+.user-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+    animation: slideInRight 0.3s ease-out;
+}
+
+/* 사용자 말풍선 */
+.user-bubble {
+    padding: 12px 16px;
+    border-radius: 16px;
+    border-top-right-radius: 4px;
+    max-width: 70%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    position: relative;
+    word-wrap: break-word;
+    transition: all 0.2s ease;
+}
+
+.user-bubble:hover {
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.user-chating {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   텍스트 스타일
+======================================== */
+.bot-text,
+.user-text {
+    font-size: 15px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    letter-spacing: -0.2px;
+}
+
+.bot-text {
+    color: var(--text-color-main, #1f2937);
+}
+
+/* 로딩 텍스트 */
+.loading-text {
+    color: var(--text-color-caption, #6b7280);
+    font-style: italic;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* 에러 텍스트 */
+.error-text {
+    color: #dc2626;
+    font-weight: 500;
+}
+
+.user-text {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+/* ========================================
+   로딩 스피너
+======================================== */
+.spinner {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    animation: spin 1s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   슬라이드 애니메이션
+======================================== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========================================
+   반응형 디자인
+======================================== */
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+    .bot-wrap,
+    .user-wrap {
+        margin-bottom: 20px;
+    }
+
+    .user-bubble {
+        max-width: 75%;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+    .bot-wrap {
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .user-wrap {
+        margin-bottom: 18px;
+    }
+
+    .ico-bot-profile {
+        width: 32px;
+        height: 32px;
+    }
+
+    .ico-bot-logo {
+        font-size: 18px;
+    }
+
+    .bot-name {
+        font-size: 12px;
+    }
+
+    .bot-bubble,
+    .user-bubble {
+        padding: 10px 14px;
+        border-radius: 14px;
+    }
+
+    .bot-bubble {
+        border-top-left-radius: 4px;
+    }
+
+    .user-bubble {
+        border-top-right-radius: 4px;
+        max-width: 80%;
+    }
+
+    .bot-text,
+    .user-text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .spinner {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* 작은 모바일 */
+@media (max-width: 480px) {
+    .bot-wrap {
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .user-wrap {
+        margin-bottom: 16px;
+    }
+
+    .ico-bot-profile {
+        width: 28px;
+        height: 28px;
+    }
+
+    .ico-bot-logo {
+        font-size: 16px;
+    }
+
+    .bot-bubble,
+    .user-bubble {
+        padding: 10px 12px;
+        border-radius: 12px;
+    }
+
+    .bot-bubble {
+        border-top-left-radius: 3px;
+    }
+
+    .user-bubble {
+        border-top-right-radius: 3px;
+        max-width: 85%;
+    }
+
+    .bot-text,
+    .user-text {
+        font-size: 13px;
+    }
+
+    .bot-content {
+        max-width: calc(100% - 36px);
+    }
+}
+
+/* ========================================
+   다크모드 지원 (토글 버튼으로만 활성화)
+======================================== */
+:global(.dark-mode) .bot-bubble {
+    background: var(--chat-bubble-bg-bot);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+:global(.dark-mode) .bot-bubble:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+:global(.dark-mode) .loading-bubble {
+    background: linear-gradient(90deg, #2d2d2d 0%, #3d3d3d 50%, #2d2d2d 100%);
+    background-size: 200% 100%;
+}
+
+:global(.dark-mode) .error-bubble {
+    background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+    border-color: #dc2626;
+}
+
+:global(.dark-mode) .bot-text {
+    color: var(--text-color-main);
+}
+
+:global(.dark-mode) .loading-text {
+    color: var(--text-color-caption);
+}
+
+:global(.dark-mode) .error-text {
+    color: #fca5a5;
+}
+
+:global(.dark-mode) .bot-name {
+    color: var(--text-color-caption);
+}
+
+:global(.dark-mode) .user-bubble {
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+:global(.dark-mode) .user-bubble:hover {
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+}
+
+/* ========================================
+   접근성 개선
+======================================== */
+
+/* 애니메이션 줄이기 선호 */
+@media (prefers-reduced-motion: reduce) {
+    .bot-wrap,
+    .user-wrap {
+        animation: none;
+    }
+
+    .spinner {
+        animation: none;
+    }
+
+    .loading-bubble {
+        animation: none;
+        background: var(--chat-bubble-bg-bot, #f3f4f6);
+    }
+
+    .loading-text {
+        animation: none;
+        opacity: 0.8;
+    }
+
+    .bot-bubble,
+    .user-bubble {
+        transition: none;
+    }
+}
+
+/* 고대비 모드 */
+@media (prefers-contrast: high) {
+    .bot-bubble {
+        border: 1px solid var(--border-color, #d1d5db);
+    }
+
+    .user-bubble {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .error-bubble {
+        border: 2px solid #dc2626;
+    }
+}
+
+/* ========================================
+   인쇄 스타일
+======================================== */
+@media print {
+    .bot-wrap,
+    .user-wrap {
+        page-break-inside: avoid;
+        animation: none;
+    }
+
+    .bot-bubble,
+    .user-bubble {
+        box-shadow: none;
+        border: 1px solid #e5e7eb;
+    }
+
+    .spinner {
+        display: none;
+    }
+
+    .loading-bubble,
+    .error-bubble {
+        background: #f3f4f6;
+    }
+}

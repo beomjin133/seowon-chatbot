@@ -1,0 +1,275 @@
+.login-header {
+  width: 100%;
+  padding: 30px;
+}
+
+.h-tit {
+  display: flex;
+  justify-content: center;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh);
+  width: 100%;
+}
+
+.register-wrap {
+    background: var(--bg-color-sub);
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-default);
+    animation: slideUp 0.3s forwards;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* form 기본 속성 */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+}
+
+.register-header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 5px;
+}
+
+.register-title {
+  font-size: 2rem;
+  color: var(--text-color-title);
+}
+
+.register-sub-title {
+  font-size: 1.4rem;
+  color: var(--text-color-subtitle);
+}
+
+.register-highlight {
+  color: var(--text-color-primary);
+}
+
+.register-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* input 공용 속성 */
+.form-inline {
+  display: flex;
+  gap: 10px;
+}
+
+.form-inp-box {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 70px;
+  border: var(--border-default);
+  border-radius: 5px;
+}
+
+.form-auth-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 10px;
+  border: var(--border-default);
+  border-radius: 5px;
+}
+
+.form-inp {
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 1.4rem;
+  color: var(--text-color-subtitle);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-btn {
+  width: 80px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background-color: var(--btn-color-primary-bg);
+  color: var(--btn-color-primary-text);
+}
+
+.form-timer {
+  width: 50px;
+  flex-shrink: 0;
+  color: var(--text-color-primary);
+  font-weight: 600;
+}
+
+/* 페이지 별 고유 속성성 */
+.terms-section {
+  border: var(--border-default);
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.terms-all {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center; /* 수직 가운데 */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+
+.terms-all-label {
+  font-size: 1.6rem;
+  color: var(--text-color-main);
+  font-weight: 600;
+}
+
+.terms-check-all-btn {
+  width: 28px;
+  height: 28px;
+}
+
+.terms-item {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center; /* 수직 가운데 */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  border-top: var(--border-default);
+}
+
+.terms-text {
+  display: flex;
+  gap: 5px;
+}
+
+.terms-id .terms-label .terms-tag {
+  font-size: 1.4rem;
+  color: var(--text-color-main);
+}
+
+.tag-red {
+  color: var(--text-color-accent);
+}
+
+.terms-check-btn {
+  width: 24px;
+  height: 24px;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: #e0e0e0;
+}
+
+/* 다음 버튼 */
+.register-footer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.form-next-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--btn-color-primary-bg);
+  color: var(--btn-color-primary-text);
+  border: none;
+  border-radius: 5px;
+}
+
+.form-next-btn:hover {
+  background: var(--btn-color-primary-hover);
+}
+
+.form-next-btn:disabled {
+  background: var(--btn-color-disabled-bg);
+  cursor: not-allowed;
+}
+
+.form-home-btn {
+  width: 200px;
+  padding: 10px;
+  background: var(--btn-color-sub-bg);
+  color: var(--btn-color-sub-text);
+  border: var(--border-default);
+  border-radius: 5px;
+}
+
+.form-home-btn:hover {
+  background: var(--btn-color-sub-hover);
+}
+
+.form-login-btn {
+  width: 200px;
+  padding: 10px;
+  background: var(--btn-color-primary-bg);
+  color: var(--btn-color-primary-text);
+  border-radius: 5px;
+}
+
+.form-login-btn:hover {
+  background: var(--btn-color-primary-hover);
+}
+
+/* ========================================
+   다크모드 지원 (토글 버튼으로만 활성화)
+======================================== */
+:global(.dark-mode) .register-container {
+    background: var(--bg-color-main);
+}
+
+:global(.dark-mode) .register-wrap {
+    background: var(--bg-color-sub);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+:global(.dark-mode) .terms-section {
+    border-color: var(--border-color);
+    background: var(--bg-color-main);
+}
+
+:global(.dark-mode) .terms-item {
+    border-top-color: var(--border-color);
+}
+
+:global(.dark-mode) .divider {
+    background-color: var(--border-color);
+}
+
+/* ========================================
+   반응형 디자인
+======================================== */
+@media (max-width: 500px) {
+    .register-wrap {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+    .register-form {
+        padding: 20px;
+    }
+}

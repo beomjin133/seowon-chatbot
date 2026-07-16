@@ -1,0 +1,317 @@
+/* ========================================
+   모달 오버레이
+======================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: fadeIn 0.2s ease-out;
+    backdrop-filter: blur(2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   모달 컨테이너
+======================================== */
+.modal-container {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ========================================
+   모달 헤더
+======================================== */
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.modal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color-main, #1f2937);
+    line-height: 1.3;
+}
+
+/* ========================================
+   모달 컨텐츠
+======================================== */
+.modal-content {
+    margin-bottom: 24px;
+}
+
+.modal-message {
+    margin: 0 0 16px 0;
+    font-size: 15px;
+    color: var(--text-color-main, #4b5563);
+    line-height: 1.6;
+}
+
+.modal-warning {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #fbbf24;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #78350f;
+}
+
+.modal-warning svg {
+    flex-shrink: 0;
+}
+
+/* ========================================
+   모달 액션 버튼
+======================================== */
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.modal-btn {
+    padding: 11px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 90px;
+}
+
+.modal-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-cancel {
+    background: var(--bg-color-sub, #f3f4f6);
+    color: var(--text-color-main, #374151);
+}
+
+.btn-cancel:hover {
+    background: var(--hover-bg, #e5e7eb);
+}
+
+.btn-confirm {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.btn-confirm:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* ========================================
+   반응형 디자인
+======================================== */
+
+/* 태블릿 */
+@media (max-width: 768px) {
+    .modal-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .modal-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+
+    .modal-message {
+        font-size: 14px;
+    }
+
+    .modal-warning {
+        font-size: 12px;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 480px) {
+    .modal-container {
+        margin: 16px;
+        padding: 20px;
+        max-width: calc(100% - 32px);
+    }
+
+    .modal-header {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    .modal-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .modal-btn {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* ========================================
+   다크모드 지원
+======================================== */
+:global(.dark-mode) .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+:global(.dark-mode) .modal-container {
+    background: var(--bg-color-main);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+:global(.dark-mode) .modal-icon {
+    background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+}
+
+:global(.dark-mode) .modal-title {
+    color: var(--text-color-main);
+}
+
+:global(.dark-mode) .modal-message {
+    color: var(--text-color-main);
+}
+
+:global(.dark-mode) .modal-warning {
+    background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+    border-color: #b45309;
+    color: #fde68a;
+}
+
+:global(.dark-mode) .btn-cancel {
+    background: var(--bg-color-sub);
+    color: var(--text-color-main);
+}
+
+:global(.dark-mode) .btn-cancel:hover {
+    background: var(--hover-bg);
+}
+
+:global(.dark-mode) .btn-confirm {
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+}
+
+:global(.dark-mode) .btn-confirm:hover {
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.5);
+}
+
+/* ========================================
+   접근성 개선
+======================================== */
+
+/* 포커스 스타일 */
+.modal-btn:focus-visible {
+    outline: 2px solid var(--focus-color, #4a90e2);
+    outline-offset: 2px;
+}
+
+.btn-confirm:focus-visible {
+    outline-color: #ef4444;
+}
+
+/* 애니메이션 줄이기 선호 */
+@media (prefers-reduced-motion: reduce) {
+    .modal-overlay,
+    .modal-container {
+        animation: none;
+    }
+
+    .modal-btn {
+        transition: none;
+    }
+
+    .modal-btn:active {
+        transform: none;
+    }
+}
+
+/* ========================================
+   스크롤바 스타일 (긴 컨텐츠용)
+======================================== */
+.modal-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-container::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color, #d1d5db);
+    border-radius: 10px;
+}
+
+.modal-container::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover-color, #9ca3af);
+}

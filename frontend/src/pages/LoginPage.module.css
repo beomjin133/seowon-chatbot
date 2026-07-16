@@ -1,0 +1,58 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    width: 100%;
+}
+
+.login-wrap {
+    background: var(--bg-color-sub);
+    width: 450px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-default);
+    animation: slideUp 0.3s forwards;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-header {
+  width: 100%;
+  padding: 30px;
+}
+
+.h-tit {
+  display: flex;
+  justify-content: center;
+}
+
+/* ========================================
+   다크모드 지원 (토글 버튼으로만 활성화)
+======================================== */
+:global(.dark-mode) .login-container {
+    background: var(--bg-color-main);
+}
+
+:global(.dark-mode) .login-wrap {
+    background: var(--bg-color-sub);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   반응형 디자인
+======================================== */
+@media (max-width: 500px) {
+    .login-wrap {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+}

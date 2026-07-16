@@ -1,0 +1,396 @@
+/* ========================================
+   라이트 모드 CSS 변수 (기본값)
+======================================== */
+:root {
+    /* 배경 */
+    --bg-color-main: #f7f8f8;
+    --bg-color-sub: #fff;
+    --bg-color-sidebar: #f9fafb;
+
+    /* 텍스트 */
+    --text-color-primary: #004f9a;
+    --text-color-default: #555555;
+    --text-color-main: #282828;
+    --text-color-white: #fff;
+    --text-color-title: #333333;
+    --text-color-subtitle: #6a6a6a;
+    --text-color-caption: #888888;
+    --text-color-accent: #dc3545;
+    --text-color-disabled: #b0b0b0;
+    --text-color-step: #a5a5a5;
+
+    /* 그림자 */
+    --box-shadow-primary: 0 4px 4px rgba(0, 0, 0, 0.25);
+    --box-shadow-default: 0 4px 4px rgba(0, 0, 0, 0.1);
+
+    /* 아이콘 */
+    --ico-color-primary: #004f9a;
+    --ico-color-default: #a5a5a5;
+    --ico-color-disabled: #c2c2c2;
+    --ico-color-bg-hover: rgba(0, 79, 154, 0.1);
+
+    /* 채팅 버블 */
+    --chat-bubble-bg-bot: #e8eef9;
+    --chat-bubble-bg-user: #004f9a;
+    --chat-bubble-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* 테두리 */
+    --border-default: 1px solid #ccc;
+    --border-divider: #e0e0e0;
+    --border-color: #e5e7eb;
+    --border-color-hover: #d1d5db;
+
+    /* 메인 버튼 */
+    --btn-color-primary-bg: #004f9a;
+    --btn-color-primary-text: #ffffff;
+    --btn-color-primary-hover: #003f7e;
+    --btn-color-disabled-bg: #d5d5d5;
+
+    /* 서브 버튼 */
+    --btn-color-sub-bg: #fff;
+    --btn-color-sub-text: #555;
+    --btn-color-sub-hover: #f5f5f5;
+
+    /* 입력창 배경 및 테두리 */
+    --input-bg-default: #ffffff;
+    --input-border-default: #cccccc;
+    --input-border-focus: #004f9a;
+    --input-border-error: #dc3545;
+    --input-border-disabled: #e0e0e0;
+
+    /* 텍스트 및 placeholder */
+    --input-text-color: #4a4a4a;
+    --input-placeholder-color: #9e9e9e;
+    --input-disabled-text-color: #c2c2c2;
+
+    /* 상태 색상 */
+    --status-color-success: #28a745;
+    --status-color-error: #dc3545;
+
+    /* 주요 색상 */
+    --primary-color: #004f9a;
+    --focus-color: #004f9a;
+
+    /* 호버 & 액티브 */
+    --hover-bg: #f3f4f6;
+    --active-bg: #e0e7ff;
+
+    /* 스크롤바 */
+    --scrollbar-color: #d1d5db;
+    --scrollbar-hover-color: #9ca3af;
+}
+
+/* ========================================
+   다크 모드 CSS 변수 (토글 버튼으로만 활성화)
+======================================== */
+.dark-mode {
+    /* 배경 */
+    --bg-color-main: #1e1e1e;
+    --bg-color-sub: #2b2b2b;
+    --bg-color-sidebar: #1f2937;
+
+    /* 텍스트 */
+    --text-color-primary: #60a5fa;
+    --text-color-default: #d1d5db;
+    --text-color-main: #e5e7eb;
+    --text-color-white: #fff;
+    --text-color-title: #f3f4f6;
+    --text-color-subtitle: #d1d5db;
+    --text-color-caption: #9ca3af;
+    --text-color-accent: #ef4444;
+    --text-color-disabled: #6b7280;
+    --text-color-step: #9ca3af;
+
+    /* 그림자 */
+    --box-shadow-primary: 0 4px 4px rgba(0, 0, 0, 0.5);
+    --box-shadow-default: 0 4px 4px rgba(0, 0, 0, 0.3);
+
+    /* 아이콘 */
+    --ico-color-primary: #60a5fa;
+    --ico-color-default: #9ca3af;
+    --ico-color-disabled: #6b7280;
+    --ico-color-bg-hover: rgba(96, 165, 250, 0.1);
+
+    /* 채팅 버블 */
+    --chat-bubble-bg-bot: #2d2d2d;
+    --chat-bubble-bg-user: #1e40af;
+    --chat-bubble-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+
+    /* 테두리 */
+    --border-default: 1px solid #4b5563;
+    --border-divider: #374151;
+    --border-color: #374151;
+    --border-color-hover: #4b5563;
+
+    /* 메인 버튼 */
+    --btn-color-primary-bg: #1e40af;
+    --btn-color-primary-text: #ffffff;
+    --btn-color-primary-hover: #1e3a8a;
+    --btn-color-disabled-bg: #4b5563;
+
+    /* 서브 버튼 */
+    --btn-color-sub-bg: #374151;
+    --btn-color-sub-text: #d1d5db;
+    --btn-color-sub-hover: #4b5563;
+
+    /* 입력창 배경 및 테두리 */
+    --input-bg-default: #2d2d2d;
+    --input-border-default: #4b5563;
+    --input-border-focus: #60a5fa;
+    --input-border-error: #ef4444;
+    --input-border-disabled: #374151;
+
+    /* 텍스트 및 placeholder */
+    --input-text-color: #e5e7eb;
+    --input-placeholder-color: #9ca3af;
+    --input-disabled-text-color: #6b7280;
+
+    /* 상태 색상 */
+    --status-color-success: #10b981;
+    --status-color-error: #ef4444;
+
+    /* 주요 색상 */
+    --primary-color: #60a5fa;
+    --focus-color: #60a5fa;
+
+    /* 호버 & 액티브 */
+    --hover-bg: #374151;
+    --active-bg: #1e3a8a;
+
+    /* 스크롤바 */
+    --scrollbar-color: #4b5563;
+    --scrollbar-hover-color: #6b7280;
+}
+
+/* ========================================
+   다크모드 전환 애니메이션
+======================================== */
+.dark-mode * {
+    transition: background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* 애니메이션 줄이기 선호하는 사용자 */
+@media (prefers-reduced-motion: reduce) {
+    .dark-mode * {
+        transition: none !important;
+    }
+}
+
+/* ========================================
+   기본 리셋 스타일
+======================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    list-style: none;
+}
+
+html {
+    font-size: 10px;
+    -ms-overflow-style: none; /* IE, Edge */
+    scrollbar-width: none; /* Firefox */
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    background-color: var(--bg-color-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--text-color-default);
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.4rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+    font-weight: 600;
+}
+
+/* ========================================
+   다크모드 추가 스타일
+======================================== */
+.dark-mode {
+    color-scheme: dark;
+}
+
+.dark-mode img {
+    opacity: 0.9;
+}
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+    background-color: var(--input-bg-default);
+    color: var(--input-text-color);
+    border-color: var(--input-border-default);
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+    color: var(--input-placeholder-color);
+}
+
+.dark-mode button:not(.btn-primary) {
+    color: var(--text-color-main);
+}
+
+.dark-mode a {
+    color: var(--primary-color);
+}
+
+/* ========================================
+   스크롤바 스타일
+======================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color-main);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover-color);
+}
+
+/* 다크모드 스크롤바 */
+.dark-mode ::-webkit-scrollbar-track {
+    background: var(--bg-color-main);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover-color);
+}
+
+/* ========================================
+   선택 영역 스타일
+======================================== */
+::selection {
+    background-color: rgba(0, 79, 154, 0.3);
+    color: var(--text-color-main);
+}
+
+::-moz-selection {
+    background-color: rgba(0, 79, 154, 0.3);
+    color: var(--text-color-main);
+}
+
+.dark-mode ::selection {
+    background-color: rgba(96, 165, 250, 0.3);
+    color: var(--text-color-main);
+}
+
+.dark-mode ::-moz-selection {
+    background-color: rgba(96, 165, 250, 0.3);
+    color: var(--text-color-main);
+}
+
+/* ========================================
+   재사용 유틸리티 클래스
+======================================== */
+.u-flex {
+    display: flex;
+}
+
+.u-flex-col {
+    flex-direction: column;
+}
+
+.u-w-full {
+    width: 100%;
+}
+
+.u-h-full {
+    height: 100%;
+}
+
+/* ========================================
+   버튼 및 인풋 기본 설정
+======================================== */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+input,
+textarea {
+    font-family: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* ========================================
+   로고 이미지 기본 설정
+======================================== */
+.ico-logo {
+    flex-shrink: 0;
+    width: 120px !important;
+    height: 36px !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.logo-blue {
+    background-image: url(@/assets/logo/logo-blue.png);
+}
+
+/* 다크모드에서는 로고 반전 (선택사항) */
+.dark-mode .logo-blue {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+/* ========================================
+   아이콘 버튼 유닛 기본설정
+======================================== */
+.btn-ico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+}
+
+.btn-ico:hover {
+    background-color: var(--ico-color-bg-hover);
+}
+
+/* ========================================
+   다크모드 전용 클래스 (레거시 지원)
+======================================== */
+.dark {
+    /* 기존 .dark 클래스도 지원 (레거시) */
+    --bg-color-main: #1e1e1e;
+    --bg-color-sub: #2b2b2b;
+}

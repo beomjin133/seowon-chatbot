@@ -1,0 +1,146 @@
+/* ========================================
+   토글 컨테이너
+======================================== */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.toggle-container:hover {
+  transform: scale(1.05);
+}
+
+.toggle-container:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   토글 트랙 (배경)
+======================================== */
+.toggle-track {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background: var(--border-color, #d1d5db);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.toggle-container:hover .toggle-track {
+  background: var(--border-color-hover, #9ca3af);
+}
+
+/* ========================================
+   토글 썸 (슬라이더)
+======================================== */
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-thumb.active {
+  left: 26px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.toggle-thumb.active .toggle-track {
+  background: var(--primary-color, #4a90e2);
+}
+
+/* ========================================
+   토글 아이콘
+======================================== */
+.toggle-icon {
+  font-size: 12px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.toggle-thumb.active .toggle-icon {
+  transform: rotate(20deg);
+}
+
+/* ========================================
+   반응형 디자인
+======================================== */
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .toggle-track {
+    width: 44px;
+    height: 22px;
+  }
+
+  .toggle-thumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  .toggle-thumb.active {
+    left: 24px;
+  }
+
+  .toggle-icon {
+    font-size: 11px;
+  }
+}
+
+/* ========================================
+   다크모드 스타일
+======================================== */
+:global(.dark-mode) .toggle-track {
+  background: var(--border-color-dark, #4b5563);
+}
+
+:global(.dark-mode) .toggle-container:hover .toggle-track {
+  background: var(--border-color-hover-dark, #6b7280);
+}
+
+:global(.dark-mode) .toggle-thumb {
+  background: var(--bg-color-main-dark, #1f2937);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+:global(.dark-mode) .toggle-thumb.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ========================================
+   접근성
+======================================== */
+.toggle-container:focus-visible {
+  outline: 2px solid var(--focus-color, #4a90e2);
+  outline-offset: 2px;
+  border-radius: 14px;
+}
+
+/* 애니메이션 줄이기 */
+@media (prefers-reduced-motion: reduce) {
+  .toggle-container,
+  .toggle-track,
+  .toggle-thumb,
+  .toggle-icon {
+    transition: none;
+  }
+
+  .toggle-container:hover,
+  .toggle-container:active {
+    transform: none;
+  }
+}
