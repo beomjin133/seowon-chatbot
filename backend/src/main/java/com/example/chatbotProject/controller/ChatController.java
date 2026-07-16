@@ -5,6 +5,7 @@ import com.example.chatbotProject.model.ChatLog;
 import com.example.chatbotProject.model.ChatSession;
 import com.example.chatbotProject.repository.ChatLogRepository;
 import com.example.chatbotProject.repository.ChatSessionRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -21,13 +22,14 @@ public class ChatController {
     private final ChatLogRepository chatLogRepository;
     private final ChatSessionRepository chatSessionRepository;
 
-    // 외부 API URL (환경변수로 관리해도 좋음)
-    private static final String EXTERNAL_CHAT_URL = "http://123.111.17.25:8000/chat";
+    private final String externalChatUrl;
 
     public ChatController(ChatLogRepository chatLogRepository,
-                          ChatSessionRepository chatSessionRepository) {
+                          ChatSessionRepository chatSessionRepository,
+                          @Value("${ai.chat.url}") String externalChatUrl) {
         this.chatLogRepository = chatLogRepository;
         this.chatSessionRepository = chatSessionRepository;
+        this.externalChatUrl = externalChatUrl;
     }
 
     @PostMapping("/chat")
@@ -96,7 +98,7 @@ public class ChatController {
 
             // POST 요청
             ResponseEntity<Map> responseEntity = restTemplate.exchange(
-                    EXTERNAL_CHAT_URL,
+                    externalChatUrl,
                     HttpMethod.POST,
                     requestEntity,
                     Map.class

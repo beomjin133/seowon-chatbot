@@ -1,0 +1,28 @@
+# 하위 프로젝트별 규칙은 backend/.gitignore, frontend/.gitignore, ai/.gitignore 참고.
+# 여기에는 어느 디렉터리에서나 생길 수 있는 것만 둔다.
+
+# OS 생성 파일
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# IDE 설정
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# 로그 · 임시 파일
+*.log
+*.tmp
+*.temp
+
+# 환경변수 (각 모듈의 .example 파일을 복사해서 사용)
+.env
+.env.local

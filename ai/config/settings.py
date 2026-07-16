@@ -163,8 +163,9 @@ class Settings:
             logger.error("[!] 사용 가능한 ChromaDB가 없습니다.")
             logger.error(f"   확인 경로들:")
             logger.error(f"   - FAQ: {cls.CHROMA_FAQ_DB_PATH}")
-            logger.error(f"   - 추가 섹션: {cls.CHROMA_ADDITIONAL_DB_PATH}")
+            logger.error(f"   - WEB: {cls.CHROMA_WEB_DB_PATH}")
             logger.error(f"   - PDF: {cls.CHROMA_PDF_DB_PATH}")
+            logger.error("   README의 '벡터 DB는 저장소에 없습니다' 항목을 참고해 먼저 빌드하세요.")
             return False
         
         # 현재 모드에서 사용할 DB가 있는지 확인

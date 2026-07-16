@@ -1,6 +1,6 @@
 import axios from 'axios';
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api',
   withCredentials: true, //쿠키 인증 관련 설정임(true로 해줘야 제대로 전송)
   headers: {
     'Content-Type': 'application/json', //요청 시 데이터 타입(json)

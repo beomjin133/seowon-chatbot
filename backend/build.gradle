@@ -85,7 +85,4 @@ dependencies {
 
 	// 테스트 관련
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-	// 이메일 관련
-	implementation 'org.springframework.boot:spring-boot-starter-mail'
 }
