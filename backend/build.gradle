@@ -1,0 +1,91 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.8'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+	mavenCentral()
+	gradlePluginPortal()
+}
+
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:2021.0.8"
+	}
+	repositories {
+		mavenCentral()
+	}
+}
+
+dependencies {
+	// OpenFeign 추가 (Spring Boot 2.7.x용)
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+	// MySQL 드라이버
+	runtimeOnly 'mysql:mysql-connector-java:8.0.33'
+
+	// Spring Boot 기본 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// Lombok (자동 코드 생성)
+	implementation 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// JWT 토큰
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+	// BCrypt (비밀번호 암호화)
+	implementation 'org.springframework.security:spring-security-crypto'
+
+	// Spring Security OAuth2 (소셜 로그인용 - 추가예정)
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+	// Spring Security (CORS 및 로그인, 인증)
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// Validation (@Valid, @NotNull 등)
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// H2 Database (테스트 용도)
+	runtimeOnly 'com.h2database:h2'
+
+	// Swagger (API 문서 자동 생성)
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
+
+	// Spring Boot Actuator (서버 모니터링)
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	// Spring Boot DevTools (자동 재시작)
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// Spring Boot AOP (로깅 및 트랜잭션 관리)
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+	// Jackson (JSON 파싱)
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+	// Spring Mail (이메일 전송)
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+	// Apache Commons Lang3 (문자열 유틸)
+	implementation 'org.apache.commons:commons-lang3:3.12.0'
+
+	// 테스트 관련
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// 이메일 관련
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+}
