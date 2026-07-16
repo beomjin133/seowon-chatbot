@@ -1,0 +1,6 @@
+# tools/ 스크립트(크롤러 · PDF 처리 · 벡터 DB 빌드) 전용 추가 의존성
+# API 서버 런타임에는 불필요하며, Dockerfile은 requirements.txt만 설치합니다.
+-r requirements.txt
+
+playwright        # 크롤러 (web_chroma_db.py, university_full_crawler.py 등)
+pypdf             # PyPDFLoader (improved_pdf_processor.py)

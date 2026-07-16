@@ -1,0 +1,37 @@
+version: "3.11"
+
+services:
+  rag-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: seowon-rag-api
+    ports:
+      - "8000:8000"
+    environment:
+      # Gunicorn/앱 설정
+      PORT: 8000
+      WORKERS: 2
+      LOG_LEVEL: info
+      TIMEOUT: 60
+      GRACEFUL_TIMEOUT: 30
+
+      # 필요 시 OpenAI 등 키를 여기서 주입
+      # OPENAI_API_KEY: ${OPENAI_API_KEY}
+      # 기타 settings가 .env를 읽는다면 아래 env_file 사용
+    env_file:
+      - .env
+
+    # ChromaDB(임베디드)를 호스트 폴더와 바인드 - 데이터 영속
+    volumes:
+      - ./seowon_faq_chromadb:/app/seowon_faq_chromadb
+
+    # 앱이 먼저 뜨고 /health로 확인
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+    restart: unless-stopped

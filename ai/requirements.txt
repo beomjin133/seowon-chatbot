@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+gunicorn
+loguru
+python-dotenv
+langchain-core
+langchain-community
+langchain-openai
+langchain-chroma
+chromadb==0.5.4

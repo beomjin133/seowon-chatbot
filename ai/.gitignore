@@ -1,0 +1,69 @@
+# Python 가상환경
+.venv/
+venv/
+env/
+ENV/
+
+# Python 캐시 파일
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 패키지 배포 파일
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+sdist/
+wheels/
+*.egg-info/
+*.egg
+
+# 단위 테스트 / 커버리지 보고서
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# 환경변수 파일 (.env.example만 커밋)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS 생성 파일
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# 로그 파일
+*.log
+
+# ChromaDB 벡터 DB (tools/ 스크립트로 재생성 — README 참고)
+seowon_*_chromadb*/
+
+# 원본 PDF (저작권 자료, 로컬에만 보관 — README 참고)
+pdf_documents/
+
+# 기타 임시 파일
+*.tmp
+*.temp
